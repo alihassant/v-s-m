@@ -3,19 +3,20 @@ import VerificationEmail from "../../emails/VerificationEmail";
 import { ApiResponse } from "../../types/ApiResponse";
 
 export async function sendVerificationEmail(
-  username: string,
   email: string,
-  otp: string
+  username: string,
+  verifyCode: string
 ): Promise<ApiResponse> {
   try {
     await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: "onboarding@resend.dev",
       to: email,
-      subject: "VSM | Verification OTP",
-      react: VerificationEmail({ username, otp }),
+      subject: "VSM | Verification Code",
+      react: VerificationEmail({ username, otp: verifyCode }),
     });
-    return { success: true, message: "Verification email sent successfully" };
-  } catch (error) {
-    return { success: false, message: "Failed to send verification email" };
+    return { success: true, message: "Verification email sent successfully." };
+  } catch (emailError) {
+    console.error("Error sending verification email:", emailError);
+    return { success: false, message: "Failed to send verification email." };
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useChat } from "ai/react";
+import ReactMarkdown from "react-markdown";
 
 export default function Page() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -19,8 +20,8 @@ export default function Page() {
                 : "bg-gray-100 text-gray-700"
             }`}
           >
-            <strong>{message.role === "user" ? "User" : "AI"}:</strong>{" "}
-            {message.content}
+            <strong>{message.role === "user" ? "User" : "AI"}:</strong>
+            <ReactMarkdown className="mt-1">{message.content}</ReactMarkdown>
           </div>
         ))}
       </div>

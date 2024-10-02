@@ -11,6 +11,18 @@ export default function Page() {
   return (
     <div className="flex flex-col h-screen bg-gray-100 p-4">
       <div className="flex-1 overflow-auto p-4 border border-gray-300 rounded-lg bg-white shadow-lg">
+        {messages.length === 0 && (
+          <div className="flex-1 flex h-[100%] items-center justify-center">
+            <p className="text-gray-500 text-justify w-[50%]">
+              Welcome to our AI assistant for software developers! This
+              intelligent companion, powered by LLaMA, is designed to provide
+              you with seamless coding support. Whether you need help debugging,
+              managing projects, or learning new concepts, our assistant has you
+              covered. Dive in and explore the features that make your coding
+              journey easier and more efficient. Enjoy the experience!
+            </p>
+          </div>
+        )}
         {messages.map((message) => (
           <div
             key={message.id}

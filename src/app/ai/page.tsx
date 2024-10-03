@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 
 export default function Page() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "api/suggest-messages",
+    api: "api/ai",
   });
 
   return (

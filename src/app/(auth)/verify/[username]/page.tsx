@@ -21,7 +21,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 
-const page = () => {
+const Verify = () => {
   const router = useRouter();
   const param = useParams<{ username: string }>();
   const { toast } = useToast();
@@ -48,7 +48,7 @@ const page = () => {
     } catch (error) {
       console.error("Error signing up the user", error);
       const axiosError = error as AxiosError<ApiResponse>;
-      let errorMessage =
+      const errorMessage =
         axiosError.response?.data.message ?? "Error signing up";
       toast({
         title: "Signup failed",
@@ -103,4 +103,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Verify;

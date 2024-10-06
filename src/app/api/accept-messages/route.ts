@@ -23,7 +23,7 @@ export async function POST(request: Request) {
   try {
     const updatedUser = await UserModel.findByIdAndUpdate(
       userId,
-      { isAcceptinngMessages: acceptMessages },
+      { isAcceptingMessage: acceptMessages },
       { new: true }
     );
 
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET(request: Request) {
+export async function GET() {
   await dbConnect();
 
   const session = await getServerSession(authOptions);

@@ -58,7 +58,7 @@ const SignIn = () => {
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
             Join Vortaps Secret Message
           </h1>
-          <p className="mb-4">Sign up to start your anonymous adventure.</p>
+          <p className="mb-4">Sign in.</p>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -93,9 +93,9 @@ const SignIn = () => {
         </Form>
         <div className="text-center mt-4" />
         <p>
-          Already a member?{" "}
-          <Link href="/sign-in" className="text-blue-600 hover:text-blue-800">
-            Sign in
+          Don't have an account?{" "}
+          <Link href="/sign-up" className="text-blue-600 hover:text-blue-800">
+            Sign up
           </Link>
         </p>
       </div>
